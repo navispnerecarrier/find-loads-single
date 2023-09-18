@@ -100,6 +100,11 @@ function HomePage() {
                   <div className="form-group js-field-show-password">
                       <label className="checkbox-inline"><input onClick={togglePassword} name="show-password" type="checkbox" id="showpass" />Show password</label>
                   </div>
+                  <div style={{display:'none'}} className="errorBar api-error form-group space-outer-top-xs has-error js-form-error">
+                    <div className="help-text form-error ns-icon ns-error" role="alert" data-cy="signin_form_error">
+                        <span id="" className="translation-jsx-component">The username or password you entered is incorrect.</span>
+                    </div>
+                  </div>
                   <div className="buttons">
                       <button id="btnLogin" auto-id="signin_submit_login_button" type='submit' className="btn btn-primary btn-block"> Log in</button>
                       <a href="https://www.navispherecarrier.com/registration" id="btn-register" type="button" className="btn btn-default btn-block">Create Account</a>

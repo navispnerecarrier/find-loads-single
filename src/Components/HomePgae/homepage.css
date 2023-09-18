@@ -115,6 +115,12 @@ label.required:before {
     width: 13px;
     height: 13px;
 }
+.errorBar .help-text {
+    align-items: start;
+}
+.errorBar span {
+    line-height: 1;
+}
 .btn {
     width: 100%;
     border: 1px solid transparent;
