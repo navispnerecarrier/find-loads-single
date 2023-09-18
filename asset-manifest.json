@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/find-loads-single/static/css/main.032cef5f.css",
-    "main.js": "/find-loads-single/static/js/main.c51f6fae.js",
+    "main.js": "/find-loads-single/static/js/main.62b50d19.js",
     "static/media/Logo.svg": "/find-loads-single/static/media/Logo.11619ab10e00bba7d02f21d3508c27b0.svg",
     "static/media/CHR_NavCarrier_Brand_Logo.svg": "/find-loads-single/static/media/CHR_NavCarrier_Brand_Logo.367ca2ac2521e118a700c56d28a45cf0.svg",
     "static/media/chr-logo.svg": "/find-loads-single/static/media/chr-logo.df88b10782b91ffa79b4468012eef8c5.svg",
     "static/media/chr-logo-short.svg": "/find-loads-single/static/media/chr-logo-short.af532c99fe8d5101ea93aea45a20c7d6.svg",
     "index.html": "/find-loads-single/index.html",
     "main.032cef5f.css.map": "/find-loads-single/static/css/main.032cef5f.css.map",
-    "main.c51f6fae.js.map": "/find-loads-single/static/js/main.c51f6fae.js.map"
+    "main.62b50d19.js.map": "/find-loads-single/static/js/main.62b50d19.js.map"
   },
   "entrypoints": [
     "static/css/main.032cef5f.css",
-    "static/js/main.c51f6fae.js"
+    "static/js/main.62b50d19.js"
   ]
 }
